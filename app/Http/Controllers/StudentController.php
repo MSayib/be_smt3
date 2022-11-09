@@ -32,4 +32,61 @@ class StudentController extends Controller
         ];
         return response()->json($data, 201);
     }
+
+    public function show(Request $request)
+    {
+        $student = Student::find($request->id);
+        if ($student) {
+            $data = [
+                'message' => 'Detail Data Student',
+                'data' => $student
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Data Student Tidak Ditemukan'
+            ];
+            return response()->json($data, 404);
+        }
+    }
+
+    public function update(Request $request)
+    {
+        $student = Student::find($request->id);
+        if ($student) {
+            $student->update([
+                'nama' => $request->nama ?? $student->nama,
+                'nim' => $request->nim ?? $student->nim,
+                'email' => $request->email ?? $student->email,
+                'jurusan' => $request->jurusan ?? $student->jurusan
+            ]);
+            $data = [
+                'message' => 'Data Student Berhasil Diupdate',
+                'data' => $student
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Data Student Tidak Ditemukan'
+            ];
+            return response()->json($data, 404);
+        }
+    }
+
+    public function destroy(Request $request)
+    {
+        $student = Student::find($request->id);
+        if ($student) {
+            $student->delete();
+            $data = [
+                'message' => 'Data Student Berhasil Dihapus'
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'message' => 'Data Student Tidak Ditemukan'
+            ];
+            return response()->json($data, 404);
+        }
+    }
 }
