@@ -1,4 +1,5 @@
-# UTS Final Project - Covid-19 RESTful API
+# UTS Final Project
+## Covid-19 RESTful API with Laravel 9
 ### Pre-requisite
 * PHP 8.1
 * Composer 2
@@ -41,5 +42,7 @@ Use HTTP Client
 
 ### Feedback
 Catch me up: [@ibb.ac](https://instagram.com/ibb.ac)
+
 ---
+
 Made with ❤️ by Sayib
