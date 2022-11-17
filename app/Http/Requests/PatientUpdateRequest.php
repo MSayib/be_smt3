@@ -8,7 +8,7 @@ class PatientUpdateRequest extends FormRequest
 {
     public function authorize()
     {
-        return true;
+        return false; //harus login
     }
 
     public function rules()
