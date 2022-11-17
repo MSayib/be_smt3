@@ -25,8 +25,8 @@ Check Available Routes
 
 ### Manual Testing
 Use HTTP Client
-	* Set Header Accept application/json
-	* Try access the endpoints
+* Set Header Accept application/json
+* Try access the endpoints
 
 ### Highlights
 - [x] Route Best Practice
@@ -41,4 +41,5 @@ Use HTTP Client
 
 ### Feedback
 Catch me up: [@ibb.ac](https://instagram.com/ibb.ac)
+---
 Made with ❤️ by Sayib
