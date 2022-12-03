@@ -20,10 +20,14 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/patients/search/{name}', [PatientController::class, 'search']);
-    Route::get('/patients/status/negative', [PatientController::class, 'negative']);
-    Route::get('/patients/status/positive', [PatientController::class, 'positive']);
-    Route::get('/patients/status/recovered', [PatientController::class, 'recovered']);
-    Route::get('/patients/status/dead', [PatientController::class, 'dead']);
+
+    Route::group(['prefix' => 'patients/status'], function () {
+        Route::get('/negative', [PatientController::class, 'negative']);
+        Route::get('/positive', [PatientController::class, 'positive']);
+        Route::get('/recovered', [PatientController::class, 'recovered']);
+        Route::get('/dead', [PatientController::class, 'dead']);
+    });
+    
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
